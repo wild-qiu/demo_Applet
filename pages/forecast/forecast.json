@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "天气信息查询",
+  "usingComponents": {
+    "popup": "/component/popup/popup"
+  }
+}

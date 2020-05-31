@@ -1,0 +1,68 @@
+/* pages/car/car.wxss */
+page{
+  height: 100%;
+}
+.top{
+  height: 60vh;
+  padding-left: 5%;
+  color: black;
+ flex-grow: 40%;
+   position: relative;
+}
+.content{
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+}
+.du{
+  font-size: 80rpx;
+  margin-top: 30rpx;
+    color: #3C5F81;
+}
+.cond{
+  width: 70%;
+  position: absolute;
+  align-content: center;
+  margin-left: 8%;
+  bottom: 5%;
+  display: flex;
+  color: #3C5F81;
+  flex: content;
+  justify-items: center;
+  justify-content: space-around;
+  font-size: 35rpx;
+}
+.watherimg{
+    width: 200rpx;
+  height: 200rpx;
+}
+.qie{
+  width: 60rpx;
+  height: 60rpx;
+  padding-left: 10rpx;
+}
+.bot{
+  width: 100%;
+  align-content: center;
+}
+.bot-list{
+  margin-top: 30rpx;
+  border-bottom:1px solid gainsboro; 
+  height: 73rpx;
+  display: flex;
+  flex-direction: row;
+  justify-items: center;
+  justify-content: space-around;
+  align-content: center;
+}
+.userinfo{
+  margin-bottom: 20rpx;
+}
+.userinfo button::after{
+  border: none;
+}
+.images{
+  width: 100%;
+  height: 240rpx;
+  margin-top: 10rpx;
+}

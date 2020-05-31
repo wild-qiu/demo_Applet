@@ -1,0 +1,146 @@
+<!--pages/wather/wather.wxml-->
+<!--key=a97419bef00441ef89f8209205ae478f-->
+<!--https://free-api.heweather.net/s6/weather/now?location=beijing&key=a97419bef00441ef89f8209205ae478f-->
+<view class="log">
+  <image style='display:{{onShow?"block":"none"}}'  class="img"  src="{{src}}" />
+  <text >{{name}}</text>
+  <button class="btn" size="mini"  style='display:{{isShow?"block":"none"}}'  open-type="getUserInfo" bindgetuserinfo="getMyInfo">登录</button>
+  <!--open-type:激活获取微信用户信息功能-->
+    <!--bindgetuserinfo:表示获得的数据将传递给自定义函数getMyInfo，名字可自己取-->
+</view>
+<view class="content">
+<image src="/images/background/sunny.png" mode="scaleToFill" class="bgimg"></image>
+  <view class='top'>
+     <view>当前位置：{{admin_area}}  , {{city}}市</view>
+     <text class="data">{{nowDate}}</text>
+     <text class="oc">{{now.tmp}}°C  {{now.cond_txt}}</text>
+     <image src="/images/{{now.cond_code}}.png"></image>
+   </view>
+    <view class="cond">
+     <text style="font-size: 35rpx;">日出：{{daily_forecast[0].sr}}</text><text style="font-size: 35rpx;">|</text><text style="font-size: 35rpx;">日落：{{daily_forecast[0].ss}}</text>
+   </view>
+
+  
+<view class="bot">
+   <view class="bot-list">
+     <view >{{day[0]}}</view>
+     <view>{{daily_forecast[0].cond_txt_d}}   </view>
+      <view>{{daily_forecast[0].tmp_min}}/{{daily_forecast[0].tmp_max}}°C</view>
+   </view>
+
+ <view class="bot-list">
+  <view>{{day[1]}}</view>
+  <view>{{daily_forecast[1].cond_txt_d}}  </view>
+   <view>{{daily_forecast[1].tmp_min}}/{{daily_forecast[1].tmp_max}}°C</view>
+   </view>
+
+   <view class="bot-list">
+   <view>{{day[2]}}</view>
+    <view>{{daily_forecast[2].cond_txt_d}}</view>
+    <view>{{daily_forecast[2].tmp_min}}/{{daily_forecast[2].tmp_max}}°C</view>
+   </view>
+
+   <view class="userinfo">
+    <button  bindtap="showPopup" style="font-size:26rpx !important;padding:15rpx; background-color:transparent;" type="{{default}}">了解15天趋势预报</button>
+  </view>
+  <popup id='popup' 
+      title='标题' 
+      content='由于技能不足，尚未开发此功能' 
+      btn_ok='确定'
+      bind:error="_error"  
+      bind:success="_success">
+  </popup>
+
+   <view class="bot-list" style="color:#3C5F81;font-weight: bold;">今日详情</view>
+</view>
+
+
+  <view class="detail">
+    <view class="bar">
+      <view class=box">湿度</view>
+      <view class=box">{{now.hum}}%</view>
+      <view class=box">气压</view>
+       <view class=box">{{now.pres}}</view>
+    </view>
+    <view class="bar">
+     <view class=box">能见度</view>
+      <view class=box">{{now.vis}}km</view>
+     <view class=box">风向</view>
+     <view class=box">{{now.wind_dir}}</view>
+    </view>
+   <view class="bar">
+    <view class=box">风速</view>
+       <view class=box">{{now.wind_spd}}km/h</view>
+      <view class=box">风级</view>
+      <view class=box">{{now.wind_sc}}级</view>
+   </view>
+   <view class="bar">
+    <view class=box">云量</view>
+       <view class=box">{{now.cloud}}%</view>
+      <view class=box">体感温度</view>
+      <view class=box">{{now.fl}}°C</view>
+   </view>
+   <view class="bar">
+    <view class=box">降水量</view>
+       <view class=box">{{now.pcpn}}cm</view>
+      <view class=box">体感温度</view>
+      <view class=box">{{now.fl}}°C</view>
+   </view>
+  </view>
+
+</view>
+
+<view class="lifestyle">
+ <view style="color:#3C5F81;font-size:40rpx;border-bottom:1px solid #3C5F81;   font-weight: bold;">生活指数类型</view>
+ <view class="life-list">
+ <view class='life-content'>
+  <view class='life-text'>
+     <image src='/images/life/shushi.png'/>
+     <text style="font-size:30rpx;">舒适指数</text>
+  </view>
+  <view class="life-txt">{{lifestyle[0].brf}}，{{lifestyle[0].txt}}</view>
+</view>
+
+   <view class="life-list">
+ <view class='life-content'>
+  <view class='life-text'>
+     <image src='/images/life/ganmaoyaowu.png'/>
+     <text style="font-size:30rpx;">感冒指数</text>
+  </view>
+  <view class="life-txt">{{lifestyle[2].brf}}，{{lifestyle[2].txt}}</view>
+</view>
+ </view>
+
+ <view class="life-list">
+ <view class='life-content'>
+  <view class='life-text'>
+     <image src='/images/life/yundong.png'/>
+     <text style="font-size:30rpx;">运动指数</text>
+  </view>
+  <view class="life-txt">{{lifestyle[3].brf}}，{{lifestyle[3].txt}}</view>
+</view>
+ </view>
+
+ <view class="life-list">
+ <view class='life-content'>
+  <view class='life-text'>
+     <image src='/images/life/xiche.png'/>
+     <text style="font-size:30rpx;">洗车指数</text>
+  </view>
+  <view class="life-txt">{{lifestyle[6].brf}}，{{lifestyle[6].txt}}</view>
+</view>
+ </view>
+
+<view class="life-list">
+ <view class='life-content'>
+  <view class='life-text'>
+     <image src='/images/life/ziyuan.png'/>
+     <text style="font-size:30rpx;">旅游指数</text>
+  </view>
+  <view class="life-txt">{{lifestyle[4].brf}}，{{lifestyle[4].txt}}</view>
+</view>
+ </view>
+
+ </view>
+ <view class="footer">气象数据来自 和风天气</view>
+</view>

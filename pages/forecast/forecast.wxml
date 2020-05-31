@@ -1,0 +1,54 @@
+<!--pages/car/car.wxml-->
+<view>
+<image  src="/images/life/bg.png" mode="scaleToFill" class="bgimg"/>
+<view class="content">
+   <view class="top">
+   <view class="du">{{now.tmp}}°C</view>
+<picker mode='region' bindchange="changeRegion">
+<view>{{region}}</view>
+</picker>
+   <view > {{now.cond_txt}}  <image class="qie" src="/images/background/qie.png"/></view>
+<image class="watherimg" src="/images/{{now.cond_code}}.png" />
+
+   <view class="cond">
+     <text>日出：{{daily_forecast[0].sr}}</text><text>|</text><text>日落：{{daily_forecast[0].ss}}</text>
+   </view>
+  </view>
+
+ <view class="bot">
+   <view class="bot-list">
+    <view >{{day[0]}}</view>
+    <view>{{daily_forecast[0].cond_txt_d}}</view>
+    <view>{{daily_forecast[0].tmp_min}}/{{daily_forecast[0].tmp_max}}°C</view>
+   </view>
+
+<view class="bot-list">
+ <view>{{day[1]}}</view>
+  <view>{{daily_forecast[1].cond_txt_d}}</view>
+  <view>{{daily_forecast[1].tmp_min}}/{{daily_forecast[1].tmp_max}}°C</view>
+   </view>
+
+   <view class="bot-list">
+   <view>{{day[2]}}</view>
+    <view>{{daily_forecast[2].cond_txt_d}}</view>
+    <view>{{daily_forecast[2].tmp_min}}/{{daily_forecast[2].tmp_max}}°C</view>
+   </view>
+
+  <view class="userinfo">
+    <button  bindtap="showPopup" style="font-size:26rpx !important;padding:15rpx; background-color:transparent;" type="{{default}}">了解15天趋势预报</button>
+  </view>
+  <popup id='popup' 
+      title='标题' 
+      content='由于技能不足，尚未开发此功能' 
+      btn_ok='确定'
+      bind:error="_error"  
+      bind:success="_success">
+  </popup>
+ </view>
+
+<image class="images" src="/images/life/two.jpg"></image>
+</view>
+
+
+ <view class="footer">气象数据来自 和风天气</view>
+</view>

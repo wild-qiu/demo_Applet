@@ -1,0 +1,37 @@
+{
+  "pages": [
+   
+      "pages/wather/wather",
+     
+        "pages/forecast/forecast"
+      
+  ],
+  "window": {
+"navigationBarBackgroundColor": "#5173BB",
+    "navigationBarTitleText": "就是个天气欢迎你",
+    "navigationBarTextStyle": "white"
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于获取当前位置的天气信息"
+    }
+  },
+  "tabBar": {
+    "selectedColor": "#3883FA",
+    "list": [
+      {
+        "pagePath": "pages/wather/wather",
+        "text": "首页",
+        "iconPath": "images/shouye_1.png",
+        "selectedIconPath": "images/index.png"
+      },
+      {
+        "pagePath": "pages/forecast/forecast",
+        "text": "天气查询",
+        "iconPath": "images/tianqiyubao.png",
+        "selectedIconPath": "images/tianqiyubao1.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

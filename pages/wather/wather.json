@@ -1,0 +1,7 @@
+{
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "popup": "/component/popup/popup"
+  },
+    "navigationBarTitleText": "今日天气"
+}

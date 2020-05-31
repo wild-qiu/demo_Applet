@@ -1,0 +1,129 @@
+/* pages/wather/wather.wxss */
+.img{
+  width:60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+    z-index: 1;
+}
+.btn{
+  width: 130rpx;
+  padding: 0;
+  color: #3C5F81;
+  background-color: transparent;
+}
+.log{
+  margin-top: 2%;
+  width: 66px;
+  display: flex;
+  flex-direction: row;
+  justify-items: center;
+  justify-content: space-around;
+}
+
+.content{
+  display: flex;
+  width: 100%;
+   height: 100%;
+   flex-direction: column;
+   align-items: center;
+   justify-items: center;
+}
+
+.top{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+   font-size: 35rpx;
+   height: 100%;
+   }
+  .oc{
+    font-size: 80rpx;
+  color: #3C5F81;
+  }
+   .data{
+     font-size: 30rpx;
+     margin: 40rpx;
+   }
+.cond{
+  width: 70%;
+  margin-top: 8%;
+  align-content: center;
+  margin-left: 6%;
+  display: flex;
+  flex: content;
+  justify-items: center;
+  color: #3C5F81;
+  justify-content: space-around;
+}
+
+.bot{
+  width: 100%;
+  margin-top: 2%;
+  align-content: center;
+  height: 100%;
+}
+.bot-list{
+  margin-top: 30rpx;
+  border-bottom:1px solid gainsboro; 
+  height: 73rpx;
+  display: flex;
+  flex-direction: row;
+  justify-items: center;
+  justify-content: space-around;
+  align-content: center;
+}
+.userinfo{
+  margin-bottom: 20rpx;
+}
+.userinfo button::after{
+  border: none;
+}
+
+.detail{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  margin-bottom: 2%;
+  border-bottom: 1px solid #ccc;
+}
+.bar{
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  margin: 20rpx 0;
+}
+.box{
+  width: 33.3%;
+  text-align: center;
+}
+.lifestyle{
+  margin-top: 3%;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+.life-list image{
+ width: 120rpx;
+ height: 85rpx;
+}
+.life-txt{
+  text-indent: 2em;
+  font-size: 30rpx;
+  align-content: center;
+  margin-left: 20rpx;
+}
+.life-txt{
+  margin-left: 40rpx;
+}
+.life-content{
+  display: flex;
+  flex-direction: row;
+  margin: 10rpx;
+   border-bottom: 1px solid #3C5F81;
+}
+image{
+  width: 200rpx;
+  height: 200rpx;
+}
